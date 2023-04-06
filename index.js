@@ -13,12 +13,12 @@ connection.sync({ alter: true });
 app.post("/places", async (request, response) => {
   try {
     const data = {
-      name: "nome do local",
-      contact: "(00)0000-0000",
-      opening_hours: "Segunda a Sexta: 9h as 18h",
-      description: "Descrição do Local",
-      latitude: -23.5505,
-      longitude: -46.6333,
+        name: request.body.name,
+        contact: request.body.contact,
+        opening_hours: request.body.opening_hours,
+        description: request.body.description,
+        latitude: request.body.latitude,
+        longitude: request.body.longitude
     };
 
     const place = await Place.create(data);
