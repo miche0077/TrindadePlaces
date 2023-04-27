@@ -1,8 +1,8 @@
 const Place = require("../../models/place");
 
 async function deletePlace(request, response) {
-  const deleteId = request.params.id;
-  const placeFound = await Place.findByPk(deleteId);
+  const id = request.params.id;
+  const placeFound = await Place.findByPk(id);
   try {
     await placeFound.destroy();
     response.status(204).json();
