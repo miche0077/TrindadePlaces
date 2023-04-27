@@ -5,7 +5,7 @@ async function deletePlace(request, response) {
   const placeFound = await Place.findByPk(deleteId);
   try {
     await placeFound.destroy();
-    response.status(204).json({ message: `Place ${deleteId} deletado!` });
+    response.status(204).json();
   } catch {
     response.status(500).json({ message: "Error" });
   }
